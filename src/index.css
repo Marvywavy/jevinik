@@ -1,0 +1,46 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap');
+@import "tailwindcss";
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.jevinik-gradient {
+  background: linear-gradient(
+    to right,
+    #171F2E 0%,
+    #313F5E 70%,
+    #171F2E 100%
+  );
+}
+
+.orange-gradient {
+  background: linear-gradient(
+    to right,
+    #DE5601 50%,
+    #FD7E32 100%
+  );
+}
+
+.orange-gradient-text {
+  background: linear-gradient(
+    to right,
+    #DE5601 50%,
+    #FD7E32 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+.font-clash {
+  font-family: "Clash Display", sans-serif;
+}
