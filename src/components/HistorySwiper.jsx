@@ -46,12 +46,12 @@ function HistorySwiper() {
         {dishes.map((dish, i) => (
           <div
             key={dish.name + i}
-            className="shrink-0 w-100 snap-start"
+            className="shrink-0 w-100 snap-start w-full "
           >
             <img
               src={dish.image}
               alt={dish.name}
-              className="w-full h-70 object-cover rounded-xl"
+              className="w-full  h-70 object-cover rounded-xl"
             />
           </div>
         ))}

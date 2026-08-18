@@ -123,7 +123,7 @@ const Footer = () => {
         </div>
 
         <div className="bg-[linear-gradient(to_right,#171F2E_0%,#313F5E_70%,#171F2E_100%)]  h-30 relative flex flex-col justify-center  ">
-            <div className='lg:w-[80%] w-full px-8 lg:px-0 mx-auto flex md:justify-between gap-4 text-white md:text-[12px] text-[10px] lg:text-[16px] '>
+            <div className='lg:w-[80%] w-full px-8 lg:px-0 mx-auto flex flex-col md:flex-row md:justify-between gap-4 text-white md:text-[12px] text-[10px] lg:text-[16px] '>
                 <p>© 2026 Jevinik Restaurant. All rights reserved.</p>
 
                 <div className='flex gap-10 '>
