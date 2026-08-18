@@ -17,7 +17,7 @@ function Navbar(){
 
     return(
        <div className='relative w-full text-[#F3F4F8] '>
-            <div className='absolute z-1000 max-w-[80%] w-[80%] top-10 left-15 flex justify-between h-30 items-center  '>
+            <div className='absolute z-1000 max-w-[80%] w-[80%] top-10 md:left-15 left-5 flex justify-between h-30 items-center  '>
                 <div className='shrink-0 z-1000'>
                     <img src={logo} alt="Jevinik logo" className="min-w-20 shrink-0" />
                 </div>

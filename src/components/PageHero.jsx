@@ -10,11 +10,11 @@ const PageHero = ({title, description}) => {
 
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#171F2E_0%,#313F5E_70%,#171F2E_100%)] h-180 opacity-70  "></div>
         <div className='flex  md:px-20 flex-col items-center lg:text-start text-center  gap-5 absolute  top-[40%] '>
-            <h1 className='font-semibold text-8xl font-poppins text-white '>
+            <h1 className='font-semibold md:text-8xl text-5xl font-poppins text-white '>
                 {title}
             </h1>
 
-            <p className='text-2xl text-white '>
+            <p className='md:text-2xl text-lg text-white '>
                 {description}
             </p>
         </div>

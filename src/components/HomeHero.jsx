@@ -8,13 +8,13 @@ import round from '../assets/round-gradient.png'
 function HomeHero(){
     return (
         <div className="relative jevinik-gradient lg:h-[100vh] h-320 w-full ">
-            <div className='absolute top-[45%] right-[5%] left-[2%]  md:top-20 md:left-[-10%] md:right-[70%] w-110 md:w-150 opacity-50' >
-                <img src={circle} alt="" />
+            <div className='absolute top-[50%]  left-[8%]  md:top-20 md:left-[-10%] md:right-[70%] w-110 md:w-150 opacity-50' >
+                <img src={circle} alt="" className='md:w-full w-[70%] ' />
                 
             </div>
 
             <div className='   flex flex-col-reverse  md:flex-row text-[#F3F4F8] items-center w-full px-8 md:px-0 md:w-[80%] mx-auto '>
-                <div className='md:w-[40%]  flex flex-col gap-4 items-center md:items-start absolute top-[57%] right-[10%] left-[15%] md:left-[5%] md:top-60'>
+                <div className='md:w-[40%]  flex flex-col gap-4 items-center md:items-start absolute top-[57%] right-[10%] left-[13%] md:left-[5%] md:top-60'>
                     <div className='flex flex-col md:items-start items-center gap-4 md:text-start  text-center '>
                         <h1 className='font-poppins font-medium text-4xl md:text-8xl w-full'>Simply Delicious</h1>
                         <p className='md:p-2 md:text-2xl text-lg '>Authentic Nigerian & West African Cuisine</p>

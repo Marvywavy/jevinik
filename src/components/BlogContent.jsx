@@ -12,14 +12,14 @@ const BlogContent = () => {
                 <img src={BlogChef} alt="" className='rounded-l-4xl  object-cover lg:h-200 h-150 ' />
             </div>
 
-            <div className=' lg:w-[50%] md:w-[80%] w-[50%]  flex flex-col justify-between rounded-r-4xl lg:relative  py-16 lg:px-14 px-5 jevinik-gradient h-full right-0 object-cover  '>
-                <div className='flex flex-col gap-10 '>
-                    <div className='flex items-center md:gap-10 gap-2 '>
+            <div className=' lg:w-[50%] md:w-[80%] w-[50%]  flex flex-col justify-between rounded-r-4xl lg:relative  md:py-16 py-8 lg:px-14 px-5 jevinik-gradient h-full right-0 object-cover  '>
+                <div className='flex flex-col md:gap-10 gap-3 '>
+                    <div className='flex items-center md:flex-row flex-col md:gap-10 gap-2 '>
                         <button className='orange-gradient rounded-2xl px-4  py-2 text-white font-bold md:text-sm text-[10px]  '>FEATURED</button>
                         <p className='text-[#F3F4F8] md:text-[16px] text-[12px] '>8 min read</p>
                     </div>
 
-                    <div className='flex flex-col gap-4 '>
+                    <div className='flex flex-col md:gap-4 gap-2 '>
                         <h3 className='text-[#F3F4F8] font-semibold md:text-2xl lg:text-5xl '>
                             Spice Guide: Essential Nigerian Seasonings
                         </h3>
