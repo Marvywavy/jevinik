@@ -57,7 +57,7 @@ function MenuContent() {
       if (atEnd) directionRef.current = -1;
       if (atStart) directionRef.current = 1;
 
-      el.scrollBy({ left: 350 * directionRef.current, behavior: "smooth" });
+      el.scrollBy({ left: 380 * directionRef.current, behavior: "smooth" });
     }, 2500);
 
     return () => clearInterval(interval);
