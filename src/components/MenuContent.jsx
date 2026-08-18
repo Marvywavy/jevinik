@@ -57,7 +57,7 @@ function MenuContent() {
       if (atEnd) directionRef.current = -1;
       if (atStart) directionRef.current = 1;
 
-      el.scrollBy({ left: 410 * directionRef.current, behavior: "smooth" });
+      el.scrollBy({ left: 350 * directionRef.current, behavior: "smooth" });
     }, 2500);
 
     return () => clearInterval(interval);
@@ -99,7 +99,7 @@ function MenuContent() {
         {filteredDishes.map((dish, i) => (
           <div
             key={dish.name + i}
-            className="shrink-0 w-[320px] border border-[#AFBBD5] shadow h-60 rounded-4xl md:w-[40%] w-full  p-2 pl-14 relative flex flex-col gap-2"
+            className="shrink-0 w-[320px] border border-[#AFBBD5] shadow md:h-60 h-70 rounded-4xl md:w-[40%] w-full  p-2 pl-14 relative flex flex-col gap-2"
           >
             <h1 className="z-0 text-2xl font-semibold ">{dish.name}</h1>
             <p className="z-0 text-[18px] text-[#313F5E] ">{dish.description}</p>
