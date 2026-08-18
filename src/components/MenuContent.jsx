@@ -14,8 +14,10 @@ import { ArrowUpRight } from "lucide-react";
 function MenuContent() {
   const scrollRef = useRef(null);
   const directionRef = useRef(1); // 1 = right, -1 = left
+  const rafRef = useRef(null);
+  const pausedRef = useRef(false);
 
-  const [activeType, setActiveType] = (useState ("All"))
+  const [activeType, setActiveType] = useState("All");
 
   const dishes = [
     { name: "Afang Soup", image: AfangMenu, category:["Soup", "Swallows", "Pepper Soup", "Proteins",], description: "A timeless staple, perfectly cooked to fluffy perfection, offering a versatile base for your favorite sauces and culinary creations." },
@@ -38,30 +40,48 @@ function MenuContent() {
   ]
 
 
-  const filteredDishes = 
+  const filteredDishes =
     activeType === "All"
     ? dishes
     : dishes.filter((dish) => dish.category.includes(activeType));
 
+  // Continuous slow drift instead of jump-then-stop: move a fraction of a
+  // pixel every frame and reverse direction smoothly at each end.
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
 
-    const interval = setInterval(() => {
-      if (!el) return;
+    const SPEED = 0.6; // px per frame — lower = slower/smoother drift
 
-      const maxScroll = el.scrollWidth - el.offsetWidth;
-      const atEnd = el.scrollLeft >= maxScroll - 5;
-      const atStart = el.scrollLeft <= 5;
+    const tick = () => {
+      if (el && !pausedRef.current) {
+        const maxScroll = el.scrollWidth - el.offsetWidth;
 
-      if (atEnd) directionRef.current = -1;
-      if (atStart) directionRef.current = 1;
+        if (maxScroll > 0) {
+          let next = el.scrollLeft + SPEED * directionRef.current;
 
-      el.scrollBy({ left: 380 * directionRef.current, behavior: "smooth" });
-    }, 2500);
+          if (next >= maxScroll) {
+            next = maxScroll;
+            directionRef.current = -1;
+          } else if (next <= 0) {
+            next = 0;
+            directionRef.current = 1;
+          }
 
-    return () => clearInterval(interval);
-  }, []);
+          el.scrollLeft = next;
+        }
+      }
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [filteredDishes.length]);
+
+  // Pause the drift while the user is actively touching/dragging/scrolling
+  // it themselves, so it doesn't fight their input.
+  const pause = () => { pausedRef.current = true; };
+  const resume = () => { pausedRef.current = false; };
 
   return (
     <div className="w-[80%] mx-auto min-w-0 flex flex-col gap-10 ">
@@ -73,12 +93,12 @@ function MenuContent() {
                 </p>
             </div>
 
-            <div className="w-full lg:w-[60%] flex lg:flex-row flex-col gap-2 lg:justify-between items-center ">
+            <div className="w-full lg:w-[60%] flex flex-wrap lg:flex-row flex-col gap-2 lg:justify-between justify-center items-center ">
                 {types.map((type) => (
                     <button 
                         key={type.name}
                         onClick={() =>  setActiveType(type.name)}
-                        className={`border rounded-3xl border-[#313F5E] text-[#313F5E] lg:px-6 px-2 lg:py-2 h-10 w-30 text-[10px] md:text-[14px] lg:text-[16px] transition-all duration-300
+                        className={`border rounded-3xl border-[#313F5E] text-[#313F5E] lg:w-fit lg:px-6 px-2 lg:py-2 h-10 w-30 text-[10px] md:text-[14px] lg:text-[16px] transition-all duration-300
                             ${ activeType === type.name
                                 ? "bg-[#DE5601] text-white border-[#DE5601]"
                                 : "bg-transparent"
@@ -94,12 +114,21 @@ function MenuContent() {
 
       <div
         ref={scrollRef}
-        className="flex gap-14 overflow-hidden scroll-smooth snap-x snap-mandatory scrollbar-hide pb-2 pl-10"
+        onMouseEnter={pause}
+        onMouseLeave={resume}
+        onTouchStart={pause}
+        onTouchEnd={resume}
+        onPointerDown={pause}
+        onPointerUp={resume}
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        className="flex gap-14 overflow-x-auto overflow-y-hidden pb-2 pl-10 [&::-webkit-scrollbar]:hidden"
       >
         {filteredDishes.map((dish, i) => (
           <div
             key={dish.name + i}
-            className="shrink-0 w-[320px] border border-[#AFBBD5] shadow md:h-60 h-70 rounded-4xl md:w-[40%] w-full  p-2 pl-14 relative flex flex-col gap-2"
+            className="shrink-0 border border-[#AFBBD5] shadow rounded-4xl p-2 pl-14 relative flex flex-col gap-2
+                       w-[calc(100%-2.5rem)] h-70
+                       md:w-[calc((100%-2.5rem-3.5rem)/2)] md:h-60"
           >
             <h1 className="z-0 text-2xl font-semibold ">{dish.name}</h1>
             <p className="z-0 text-[18px] text-[#313F5E] ">{dish.description}</p>
