@@ -31,8 +31,8 @@ const ArticleContent = () => {
                 </div>
             </div>
 
-            <div>
-                <img src={Chef} alt="" className='h-150 w-full object-cover object-top rounded-4xl ' />
+            <div className='w-full'>
+                <img src={Chef} alt="" className='lg:h-150 md:h-100 h-70 w-full object-cover object-top rounded-4xl ' />
             </div>
 
             
@@ -46,9 +46,11 @@ const ArticleContent = () => {
             <p className=' text-[#848484] md:text-sm   '>At Jevinik, we source the finest spices and seasonings to create authentic Nigerian flavors. Come taste the difference 
                 that quality ingredients and expert seasoning make in every dish we serve!
             </p>
+
+            <InsightBlog />
         </div>
 
-        <InsightBlog />
+        
 
         <Footer />
     </div>
