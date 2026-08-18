@@ -12,7 +12,7 @@ import Insight from "../components/Insight"
 
 function Home(){
     return(
-        <div className="flex flex-col gap-20 w-full items-center ">
+        <div className="flex flex-col gap-20 w-full ">
             <section className="bg-[#F3F4F8] flex flex-col gap-20 pb-25">
                 <HomeHero />
                 <WhyChooseUs />
