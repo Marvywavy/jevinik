@@ -78,7 +78,7 @@ function MenuContent() {
                     <button 
                         key={type.name}
                         onClick={() =>  setActiveType(type.name)}
-                        className={`border rounded-3xl border-[#313F5E] text-[#313F5E] lg:px-6 px-2 lg:py-2 w-30 text-[10px] md:text-[14px] lg:text-[16px] transition-all duration-300
+                        className={`border rounded-3xl border-[#313F5E] text-[#313F5E] lg:px-6 px-2 lg:py-2 h-10 w-30 text-[10px] md:text-[14px] lg:text-[16px] transition-all duration-300
                             ${ activeType === type.name
                                 ? "bg-[#DE5601] text-white border-[#DE5601]"
                                 : "bg-transparent"
