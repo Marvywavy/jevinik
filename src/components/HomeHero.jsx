@@ -50,7 +50,7 @@ function HomeHero(){
                 <p>Fresh Food</p>
             </div>
 
-            <div className='absolute top-[80%] left-[20%] right-[50%] md:top-[80%] md:left-[40%] md:right-[30%] z-10 flex gap-2 text-[#F3F4F8] bg-gray-400/30 text-[16px] items-center w-fit py-1 px-2 rounded-3xl '>
+            <div className='absolute top-[80%] left-[20%] right-[20%] md:top-[80%] md:left-[40%] md:right-[30%] z-10 flex gap-2 text-[#F3F4F8] bg-gray-400/30 text-[16px] items-center w-fit py-1 px-2 rounded-3xl '>
                 <img src={round} alt="" className='' />
 
                 <p>Seasoned Meal</p>
