@@ -127,7 +127,7 @@ function MenuContent() {
           <div
             key={dish.name + i}
             className="shrink-0 border border-[#AFBBD5] shadow rounded-4xl p-2 pl-14 relative flex flex-col gap-2
-                       w-[calc(100%-2.5rem)] h-70
+                       w-[calc(100%-2.5rem)] h-120 p-4
                        md:w-[calc((100%-2.5rem-3.5rem)/2)] md:h-60"
           >
             <h1 className="z-0 text-2xl font-semibold ">{dish.name}</h1>
