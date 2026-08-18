@@ -31,26 +31,26 @@ function Insight (){
     ]
 
     return(
-        <div className="w-[80%] mx-auto relative flex flex-col gap-5 ">
+        <div className="w-[80%] mx-auto   relative flex flex-col gap-5 ">
             <div className="text-[#313F5E] flex flex-col gap-4 ">
                 <h3 className="font-bold text-[28px] ">Insights & Resources</h3>
                 <p className="text-lg ">Expert advice, industry insights, and practical tips for electrical systems, power solutions, and security technology</p>
             </div>
 
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-8  '>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-8   '>
                 {dishes.map((dish) => (
                     <div
                         key={dish.name}
-                        className='md:w-80 lg:w-full w-full shadow md:h-150 h-130 rounded-3xl flex flex-col gap-3 '
+                        className='md:w-full lg:w-full w-full shadow lg:h-140 md:h-160 md:pb-0 h-160 pb-10 rounded-3xl flex flex-col gap-3 '
                     >
                         <img 
                             src={dish.image}
                             alt={dish.name}
-                            className="w-full h-80 rounded-t-3xl "
+                            className="w-full h-90 rounded-t-3xl "
                         />
                         
                         
-                        <div className='px-5 flex flex-col gap-2 '>
+                        <div className='px-5 flex flex-col gap-4 '>
                             <h4 className='font-semibold text-2xl text-[#313F5E] '>
                                 {dish.title}
                             </h4>
