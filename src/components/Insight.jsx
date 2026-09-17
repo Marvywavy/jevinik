@@ -41,7 +41,7 @@ function Insight (){
                 {dishes.map((dish) => (
                     <div
                         key={dish.name}
-                        className='md:w-full lg:w-full w-full shadow lg:h-140 md:h-160 md:pb-0 h-160 pb-10 rounded-3xl flex flex-col gap-3 '
+                        className='md:w-full lg:w-full w-full shadow md:pb-0 h-160 pb-10 rounded-3xl flex flex-col gap-3 '
                     >
                         <img 
                             src={dish.image}
@@ -66,8 +66,9 @@ function Insight (){
                                     <p>5 min read</p>
                                 </div>
                                 
-                                <div className='cursor-pointer '>
+                                <div className='cursor-pointer  '>
                                     <Link 
+                                        to="/article"
                                         className='cursor-pointer '>
                                         <button>Read More</button>
                                     </Link>

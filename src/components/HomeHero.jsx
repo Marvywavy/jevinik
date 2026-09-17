@@ -7,7 +7,7 @@ import round from '../assets/round-gradient.png'
 
 function HomeHero(){
     return (
-        <div className="relative jevinik-gradient lg:h-[100vh] h-320 w-full ">
+        <div className="relative jevinik-gradient lg:h-screen h-320 w-full ">
             <div className='absolute top-[50%]  left-[8%]  md:top-20 md:left-[-10%] md:right-[70%] w-110 md:w-150 opacity-50' >
                 <img src={circle} alt="" className='md:w-full w-[70%] ' />
                 

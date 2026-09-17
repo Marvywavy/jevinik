@@ -46,7 +46,7 @@ function HistorySwiper() {
         {dishes.map((dish, i) => (
           <div
             key={dish.name + i}
-            className="shrink-0 w-100 snap-start w-full "
+            className="shrink-0 lg:w-100 snap-start w-full "
           >
             <img
               src={dish.image}

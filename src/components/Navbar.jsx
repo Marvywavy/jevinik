@@ -69,33 +69,33 @@ function Navbar(){
             </div>
 
             <div className='w-full relative '>
-                    {isOpen && (
-                        <div className="md:hidden  flex flex-col transition-all duration-500 z-500   gap-5 mt-5 absolute shadow-2xl top-20 h-[86vh] justify-between py-10 rounded-3xl w-full items-center bg-[linear-gradient(to_right,#171F2E_0%,#313F5E_70%,#171F2E_100%)] ">
+                {isOpen && (
+                    <div className="md:hidden  flex flex-col transition-all duration-500 z-500   gap-5 mt-5 absolute shadow-2xl top-20 h-[86vh] justify-between py-10 rounded-3xl w-full items-center bg-[linear-gradient(to_right,#171F2E_0%,#313F5E_70%,#171F2E_100%)] ">
 
-                            {links.map((link) => (
+                        {links.map((link) => (
+                            <NavLink
+                            key={link.name}
+                            to={link.path}
+                            onClick={() => setIsOpen(false)}
+                            >
+                            {link.name}
+                            </NavLink>
+                        ))}
+
+                        <div className='bg-gray-400/30 py-4 px-8 rounded-4xl'>
+                            <button>
                                 <NavLink
-                                key={link.name}
-                                to={link.path}
-                                onClick={() => setIsOpen(false)}
+                                to="/contact"
                                 >
-                                {link.name}
+                                    Reserve Table
                                 </NavLink>
-                            ))}
+                            </button>
+                        </div> 
+                    </div>
 
-                            <div className='bg-gray-400/30 py-4 px-8 rounded-4xl'>
-                                <button>
-                                    <NavLink
-                                    to="/contact"
-                                    >
-                                        Reserve Table
-                                    </NavLink>
-                                </button>
-                            </div> 
-                        </div>
-
-                        
+                    
                     )}
-                </div>
+            </div>
        </div>
             
     )

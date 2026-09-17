@@ -24,7 +24,8 @@ function App() {
           <Route path="/menu" element={<Menu />} />
         </Route>
 
-        <Route path="/article" element={<Article />} />
+        <Route path="/article" element={<Article />} />      
+        
       </Routes>
     </>
     
